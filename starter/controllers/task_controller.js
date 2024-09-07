@@ -44,10 +44,7 @@ export const updateTask = async (req, res) => {
     try {
         const { id: taskID } = req.params;
         // Find and update the task, return the updated task with the option { new: true }
-        const task = await task_model.findByIdAndUpdate(taskID, req.body, {
-             new: true, 
-             runValidators: true 
-            });
+        const task = await task_model.findByIdAndUpdate(taskID, req.body, { new: true, runValidators: true });
 
         if (!task) {
             // If no task is found, send a 404 error
@@ -66,6 +63,7 @@ export const updateTask = async (req, res) => {
 export const deleteTask = async (req, res) => {
     try {
         const {id: taskID} = req.params;
+
         const task = await task_model.findByIdAndDelete(taskID); // Find a task by its id and delete it using the task model
         
         if (!task) { 
