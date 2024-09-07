@@ -9,7 +9,9 @@ const port = 3000; // Port 3000 is the default port for Express.js
 // middleware
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(express.static('./public'))
 
+// routes
 app.use('/api/v1/tasks', tasks);
 
 // Start the application by connecting to the database and listening on the specified port
