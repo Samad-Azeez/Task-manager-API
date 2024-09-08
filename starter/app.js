@@ -6,7 +6,7 @@ import { notFound } from "./middleware/not-found.js";
 import { errorHandlerMiddleware } from "./middleware/error-handler.js"; // Import the error handler middleware
 
 const app = express();
-const port = 3000; // Port 3000 is the default port for Express.js
+const port = process.env.PORT|| 3000; // Set the port to the PORT environment variable or 3000
 
 // Middleware
 app.use(express.json()); // For parsing application/json
