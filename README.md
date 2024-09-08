@@ -27,23 +27,27 @@ This is a Task Management API built using Node.js, Express, and MongoDB. It allo
 
 ### Installation
 
-1. Clone the repository:
+#### Clone the repository:
    git clone https://github.com/your-username/task-management-api.git
    cd task-management-api
 
-Install dependencies:
+### Install dependencies:
 
-npm install
+#### npm install:
 Create a .env file in the root directory and add your MongoDB connection URI:
 
 MONGO_URI=your_mongodb_connection_string
-Running the Application
+
+### Running the Application
+
 To start the application, run the following command:
 
 npm start
+
 The API will be available at http://localhost:3000/api/v1/tasks.
 
-API Endpoints
+### API Endpoints
+
 Method	Endpoint	Description
 GET	/api/v1/tasks	Retrieve all tasks
 POST	/api/v1/tasks	Create a new task
@@ -53,7 +57,8 @@ PATCH	/api/v1/tasks/
 Update a task by ID
 DELETE	/api/v1/tasks/
 Delete a task by ID
-Error Handling
+
+### Error Handling
 The API includes error handling for non-existent routes and database connection errors.
 
 ### Instructions:
