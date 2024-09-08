@@ -7,12 +7,17 @@ const taskSchema = new mongoose.Schema({
         type: String,
         required: [true, 'A task must have a name'],
         trim: true,
-        maxlength: [30, 'A task name must have less or equal then 20 characters'],
+        maxlength: [30, 'A task name must have less or equal to 30 characters'], // Updated character limit
     },
     completed: {
         type: Boolean,
-        default: false
-    }
+        default: false, // Default value is false, indicating the task is not completed
+    },    
+}, {
+    // Define the schema options
+    // Automatically manage createdAt and updatedAt fields
+    timestamps: true,
 });
 
-export const task_model = mongoose.model('Task', taskSchema); 
+// Export the task model based on the defined schema
+export const task_model = mongoose.model('Task', taskSchema);

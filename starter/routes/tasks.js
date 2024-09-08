@@ -3,12 +3,13 @@ import { createTask, deleteTask, getAllTasks, getTask, updateTask } from '../con
 
 export const tasks = express.Router();
 
-// Define the route for the task list
+// Define the route for getting all tasks and creating a new task
 tasks.route('/')
-.get(getAllTasks)
-.post(createTask);
+    .get(getAllTasks)    // Route for fetching all tasks
+    .post(createTask);    // Route for creating a new task
 
+// Define the route for getting, updating, and deleting a specific task by its ID
 tasks.route('/:id')
-.get(getTask)
-.patch(updateTask)
-.delete(deleteTask); 
+    .get(getTask)         // Route for fetching a specific task by its ID
+    .patch(updateTask)    // Route for updating a task by its ID
+    .delete(deleteTask);  // Route for deleting a task by its ID

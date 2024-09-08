@@ -1,5 +1,6 @@
 import { mongoose } from "mongoose";
 
-export const connectDB = (url)=>{
-    return mongoose.connect(url);
+// Function to connect to the database
+export const connectDB = (url) => {
+    return mongoose.connect(url);  // Connect to MongoDB using the provided URL
 };
