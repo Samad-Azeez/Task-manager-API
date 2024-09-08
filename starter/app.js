@@ -3,6 +3,7 @@ import { tasks } from './routes/tasks.js';
 import { connectDB } from './db/connect.js'; // Connect to the database
 import 'dotenv/config'; // Load environment variables from a .env file into process.env
 import { notFound } from "./middleware/not-found.js";
+import { errorHandlerMiddleware } from "./middleware/error-handler.js"; // Import the error handler middleware
 
 const app = express();
 const port = 3000; // Port 3000 is the default port for Express.js
@@ -17,6 +18,9 @@ app.use('/api/v1/tasks', tasks); // Use tasks routes under the /api/v1/tasks end
 
 // Handles routes that don't exist
 app.use(notFound); // Use notFound middleware for handling 404 errors
+
+// Error handling middleware
+app.use(errorHandlerMiddleware);
 
 // Start the application by connecting to the database and listening on the specified port
 const start = async () => {
