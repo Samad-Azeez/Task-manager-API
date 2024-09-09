@@ -19,5 +19,5 @@ const taskSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-// Export the task model based on the defined schema
+// Create a Mongoose model for the 'Task' collection using the defined taskSchema
 export const task_model = mongoose.model('Task', taskSchema);
